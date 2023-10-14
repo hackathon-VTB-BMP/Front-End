@@ -4,7 +4,7 @@ import { useState } from "react";
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 import { useQuery } from "react-query";
 import { useDisclosure } from "@chakra-ui/react";
-import DrawerComponent from "./components/DrawerComponent";
+import DrawerComponent from "./components/DrawerComponent.jsx";
 
 function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();

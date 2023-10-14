@@ -5,18 +5,19 @@ import {
   DrawerOverlay,
   DrawerContent,
 } from "@chakra-ui/react";
+import {SidePanel} from "./sidePanel/SidePanel.jsx";
 
-const DrawerComponent = ({ onClose, isOpen, dataProps }) => {
+const DrawerComponent = ({ onClose, isOpen, dataProps}) => {
   return (
-    <>
       <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
-        <DrawerContent>
-          <DrawerHeader borderBottomWidth="1px">Basic Drawer</DrawerHeader>
-          <DrawerBody>{/* <div>Адрес: {dataProps.address}</div> */}</DrawerBody>
+        <DrawerContent maxSize="312px">
+          {/*<DrawerHeader borderBottomWidth="1px"></DrawerHeader>*/}
+          <DrawerBody>{/* <div>Адрес: {dataProps.address}</div> */}
+            <SidePanel/>
+          </DrawerBody>
         </DrawerContent>
       </Drawer>
-    </>
   );
 };
 
