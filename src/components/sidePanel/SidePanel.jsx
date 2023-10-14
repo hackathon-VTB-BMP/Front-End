@@ -1,5 +1,14 @@
 import style from "./sidePanel.module.css"
+import {useState} from "react";
+
 export const SidePanel = () => {
+
+	const [activeButtonFormat, setActiveButtonFormat] = useState('Офисы');
+
+	const handleClick = (buttonName) => {
+		setActiveButtonFormat(buttonName);
+	};
+
 	return (
 		<div className={style.bar}>
 			<div className={style.location}>
@@ -20,17 +29,27 @@ export const SidePanel = () => {
 			</div>
 
 			<div className={style.filter__btns}>
-				<button className={style.active}>Офисы</button>
-				<button>Банкоматы</button>
+				<button
+					className={activeButtonFormat === 'Офисы' ? style.active : ''}
+					onClick={() => handleClick('Офисы')}
+				>
+					Офисы
+				</button>
+				<button
+					className={activeButtonFormat === 'Банкоматы' ? style.active : ''}
+					onClick={() => handleClick('Банкоматы')}
+				>
+					Банкоматы
+				</button>
 			</div>
 			<div className={style.filter__inputs}>
 				<div className={style.filter__inputs_scheckbox}>
 					<input id="24hours" type="checkbox"/>
-					<label for="24hours">24 часа</label>
+					<label htmlFor="24hours">24 часа</label>
 				</div>
 				<div>
 					<input id="work" type="checkbox"/>
-					<label for="work">Работает сейчас</label>
+					<label htmlFor="work">Работает сейчас</label>
 				</div>
 			</div>
 
