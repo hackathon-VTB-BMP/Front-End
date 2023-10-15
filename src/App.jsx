@@ -10,10 +10,17 @@ import DrawerComponent from "./components/drawer-components/DrawerComponent";
 import Header from "./components/header/Header";
 
 function App() {
-
   const [ymaps, setYmaps] = useState(null);
   const map = useRef(null);
   const [userLocation, setUserLocation] = useState(null);
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [dataProps, setDataProps] = useState();
+
+  const handleClick = (marker) => {
+    onOpen();
+    setDataProps(marker);
+  };
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -32,7 +39,6 @@ function App() {
   };
 
   const { data } = useQuery("offices", getOffices);
-
 
   const addRoute = (myPoint, pointB) => {
     const multiRoute = new ymaps.multiRouter.MultiRoute(
@@ -54,7 +60,10 @@ function App() {
     <>
       <Header />
       <YMaps
-        query={{ lang: "en_RU", apikey: "53b6fdca-2776-4953-9525-5ba28ea6ea85" }}
+        query={{
+          lang: "en_RU",
+          apikey: "53b6fdca-2776-4953-9525-5ba28ea6ea85",
+        }}
       >
         <Map
           width="100%"
@@ -63,7 +72,6 @@ function App() {
           modules={["multiRouter.MultiRoute"]}
           onLoad={(ymap) => setYmaps(ymap)}
           instanceRef={map}
-        >
         >
           {data &&
             data.map((marker) => (
@@ -109,9 +117,9 @@ function App() {
           />
         </Map>
       </YMaps>
-      <SidePanel/>
-      <Quiz/>
-  </>
+      <SidePanel />
+      <Quiz />
+    </>
   );
 }
 
