@@ -1,0 +1,39 @@
+.top_header {
+  height: 50px;
+}
+.top_header img {
+  height: 50px;
+  padding: 6px 0 0 16px;
+}
+.bott_header {
+  height: 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.menu {
+  margin-right: 20px;
+}
+.buttons_wrapper {
+  display: flex;
+  align-items: center;
+}
+.quiz {
+  width: 313px;
+  height: 40px;
+  padding: 0px 16px;
+  margin-right: 20px;
+  background-color: #0a2896;
+  border-radius: 5px;
+  color: white;
+  transition: all 0.3s ease;
+}
+.quiz:hover {
+  transition: all 0.3s ease;
+  background-color: #1e4bd2;
+}
