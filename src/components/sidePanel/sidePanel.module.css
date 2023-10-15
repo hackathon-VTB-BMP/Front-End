@@ -1,173 +1,166 @@
-.bar{
-    position: absolute;
-    z-index: 999;
-    height: 100vh;
-    width: 320px;
-    top: 0;
-    left: 0;
-    background-color: white;
-    padding: 28px 20px;
-    overflow-y: auto;
+.bar {
+  position: absolute;
+  z-index: 999;
+  height: 100vh;
+  width: 320px;
+  top: 0;
+  right: 0;
+  background-color: white;
+  padding: 28px 20px;
+  overflow-y: auto;
 }
 
 .location {
-    display: flex;
-    margin-bottom: 18px;
+  display: flex;
+  margin-bottom: 18px;
 }
 
 .location img {
-    margin-right: 12px;
+  margin-right: 12px;
 }
 
 .search__address {
-    display: flex;
-    height: 48px;
-    justify-content: space-between;
-    border: #ACB6C3 1px solid;
-    border-radius: 6px;
-    margin-bottom: 18px;
+  display: flex;
+  height: 48px;
+  justify-content: space-between;
+  border: #acb6c3 1px solid;
+  border-radius: 6px;
+  margin-bottom: 18px;
 }
 
 .search__address {
-    outline: none;
+  outline: none;
 }
 
 .search__address:checked {
-    border: #0A2896 1px solid;
+  border: #0a2896 1px solid;
 }
 
 .search__address input {
-    padding: 12px;
+  padding: 12px;
 }
 
 .filter {
-    display: flex;
-    margin-bottom: 18px;
-    font-size: 18px;
-    font-weight: 500;
+  display: flex;
+  margin-bottom: 18px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .filter img {
-    margin-right: 12px;
+  margin-right: 12px;
 }
 
 .filter__btns {
-    align-items: center;
-    display: flex;
-    background-color: #7676801F;
-    height: 35px;
-    border-radius: 8.91px;
-    margin-bottom: 18px;
+  align-items: center;
+  display: flex;
+  background-color: #7676801f;
+  height: 35px;
+  border-radius: 8.91px;
+  margin-bottom: 18px;
 }
 
 .filter__btns button {
-    border-radius: 6px;
-    height: 35px;
-    width: 131px;
+  border-radius: 6px;
+  height: 35px;
+  width: 131px;
 }
 .filter__btns .active {
-    background-color: #fff;
-    border-radius: 8.91px;
-    height: 31px;
-    width: 131px;
-    margin: 2px;
+  background-color: #fff;
+  border-radius: 8.91px;
+  height: 31px;
+  width: 131px;
+  margin: 2px;
 }
 
 .filter__inputs {
-    display: flex;
-    margin-bottom: 18px;
+  display: flex;
+  margin-bottom: 18px;
 }
 
 .filter__inputs label {
-    margin-right: 24px;
-    padding-left: 8px;
+  margin-right: 24px;
+  padding-left: 8px;
 }
 
 .filter__client h2 {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 18px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 18px;
 }
 
 .filter__client_btns {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 18px;
-
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
 }
 
 .filter__client_btns button {
-    border: #0A2896 1px solid;
-    margin-right: 8px;
-    padding: 8px 12px;
-    border-radius: 20px;
-    color: #0A2896;
+  border: #0a2896 1px solid;
+  margin-right: 8px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: #0a2896;
 }
 
 .filter__client_btns button {
-    border: #0A2896 1px solid;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    padding: 8px 12px;
-    border-radius: 20px;
-    color: #0A2896;
+  border: #0a2896 1px solid;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: #0a2896;
 }
 
 .filter__services h2 {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 18px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 18px;
 }
 
-.filter__services  {
-    margin-bottom: 18px;
+.filter__services {
+  margin-bottom: 18px;
 }
 
 .search__services {
-    display: flex;
-    height: 48px;
-    justify-content: space-between;
-    border: #ACB6C3 1px solid;
-    border-radius: 6px;
-    margin-bottom: 18px;
+  display: flex;
+  height: 48px;
+  justify-content: space-between;
+  border: #acb6c3 1px solid;
+  border-radius: 6px;
+  margin-bottom: 18px;
 }
 
 .search__services input {
-    padding: 12px;
+  padding: 12px;
 }
 
 .filter__services button {
-    border: #0A2896 1px solid;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    padding: 8px 12px;
-    border-radius: 20px;
-    color: #0A2896;
+  border: #0a2896 1px solid;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: #0a2896;
 }
 
 .filter__services span {
-    font-weight: 600;
-    color: #0A2896;
-    cursor: pointer;
+  font-weight: 600;
+  color: #0a2896;
+  cursor: pointer;
 }
 
 .filter__additionally h2 {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 18px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 18px;
 }
 
 .filter__additionally button {
-    border: #0A2896 1px solid;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    padding: 8px 12px;
-    border-radius: 20px;
-    color: #0A2896;
+  border: #0a2896 1px solid;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: #0a2896;
 }
-
-
-
-
-
-

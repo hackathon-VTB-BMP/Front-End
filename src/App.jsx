@@ -7,7 +7,6 @@ import { YMaps, Map, Placemark, Clusterer } from "@pbe/react-yandex-maps";
 import { useQuery } from "react-query";
 import { useDisclosure } from "@chakra-ui/react";
 import DrawerComponent from "./components/drawer-components/DrawerComponent";
-import Header from "./components/header/Header";
 
 function App() {
   const [ymaps, setYmaps] = useState(null);
@@ -58,7 +57,6 @@ function App() {
 
   return (
     <>
-      <Header />
       <YMaps
         query={{
           lang: "en_RU",
@@ -118,7 +116,7 @@ function App() {
         </Map>
       </YMaps>
       <SidePanel />
-      <Quiz />
+      {/* <Quiz /> */}
     </>
   );
 }
