@@ -1,9 +1,4 @@
-import {
-  Drawer,
-  DrawerBody,
-  DrawerOverlay,
-  DrawerContent,
-} from "@chakra-ui/react";
+import { Drawer, DrawerBody, DrawerContent } from "@chakra-ui/react";
 
 import styles from "./drawer-components.module.css";
 import PointCard from "../point-card/PointCard";
@@ -17,7 +12,7 @@ const DrawerComponent = ({
 }) => {
   return (
     <>
-      <Drawer placement="left" onClose={onClose} isOpen={isOpen} size="xs"W>
+      <Drawer placement="left" onClose={onClose} isOpen={isOpen} size="xs" W>
         <DrawerContent>
           <DrawerBody>
             <div className={styles.title}>Рекомендуемые отделения</div>

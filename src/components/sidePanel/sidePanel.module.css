@@ -1,4 +1,3 @@
-
 .bar {
   position: absolute;
   z-index: 999;
@@ -9,6 +8,7 @@
   background-color: white;
   padding: 28px 20px;
   overflow-y: auto;
+<<<<<<< HEAD
 .bar{
     position: absolute;
     z-index: 999;
@@ -22,6 +22,11 @@
     -webkit-box-shadow: -12px 1px 8px 0px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: -12px 1px 8px 0px rgba(34, 60, 80, 0.2);
     box-shadow: -12px 1px 8px 0px rgba(34, 60, 80, 0.2);
+=======
+  -webkit-box-shadow: -12px 1px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: -12px 1px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: -12px 1px 8px 0px rgba(34, 60, 80, 0.2);
+>>>>>>> 99788ae05bad34378f5622e42da4102bf45248eb
 }
 
 .location {
