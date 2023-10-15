@@ -3,7 +3,7 @@ import "./App.css";
 import { SidePanel } from "./components/sidePanel/SidePanel.jsx";
 import { Quiz } from "./components/quiz/Quiz.jsx";
 import { useState, useRef, useEffect } from "react";
-import { YMaps, Map, Placemark, Clusterer } from "@pbe/react-yandex-maps";
+import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 import { useQuery } from "react-query";
 import { useDisclosure } from "@chakra-ui/react";
 import DrawerComponent from "./components/drawer-components/DrawerComponent";
@@ -33,11 +33,18 @@ function App() {
   }, []);
 
   const getOffices = async () => {
-    const data = await axios.get("http://localhost:3000/office");
-    return data.data;
+    const data = await axios.get("http://91.222.236.93:8080/offices");
+    return data.data._embedded.offices;
+  };
+
+  const getAtms = async () => {
+    const data = await axios.get("http://91.222.236.93:8080/atms");
+    console.log(data.data._embedded.atms);
+    return data.data._embedded.atms;
   };
 
   const { data } = useQuery("offices", getOffices);
+  const { data: dataAtms } = useQuery("atms", getAtms);
 
   const addRoute = (myPoint, pointB) => {
     const multiRoute = new ymaps.multiRouter.MultiRoute(
@@ -82,29 +89,23 @@ function App() {
                 }}
                 key={marker.salePointName}
                 geometry={[marker.latitude, marker.longitude]}
+                onClick={() => handleClick(marker)}
               />
             ))}
-          <Clusterer
-            options={{
-              preset: "islands#darkBlueCircleIcon",
-              groupByCoordinates: false,
-            }}
-          >
-            {data &&
-              data.map((marker) => (
-                <Placemark
-                  options={{
-                    iconLayout: "default#image",
-                    iconImageHref: "images/VTB_icon.svg",
-                    iconImageSize: [70, 70],
-                    iconImageOffset: [-20, -40],
-                  }}
-                  key={marker.salePointName}
-                  geometry={[marker.latitude, marker.longitude]}
-                  onClick={() => handleClick(marker)}
-                />
-              ))}
-          </Clusterer>
+          {dataAtms &&
+            dataAtms.map((marker) => (
+              <Placemark
+                options={{
+                  iconLayout: "default#image",
+                  iconImageHref: "images/VTB_atms.svg",
+                  iconImageSize: [70, 70],
+                  iconImageOffset: [-20, -40],
+                }}
+                key={marker.code}
+                geometry={[marker.latitude, marker.longitude]}
+                onClick={() => handleClick(marker)}
+              />
+            ))}
 
           <DrawerComponent
             onClose={onClose}
