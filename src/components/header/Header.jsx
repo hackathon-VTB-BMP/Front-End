@@ -3,22 +3,22 @@ import { useState } from "react";
 import { Menu, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react";
 import { ChevronUp, ChevronDown, HelpCircle } from "lucide-react";
 import logo from "../../img/logo.png";
-import {Quiz} from "../quiz/Quiz.jsx";
+import { Quiz } from "../quiz/Quiz.jsx";
 
 const Header = ({ children }) => {
   const [openInfo, setOpenInfo] = useState(false);
   const [quizOpen, setQuizOpen] = useState(false);
 
-  const handleButtonClick = (e) => {
-    setQuizOpen(true);
+  const handleButtonClick = () => {
+    setQuizOpen(!quizOpen);
   };
 
   return (
     <>
       <div className={styles.header}>
         <div className={styles.top_header}>
-        <img src={logo} alt="logo" />
-      </div>
+          <img src={logo} alt="logo" />
+        </div>
         <div className={styles.bott_header}>
           <div className={styles.title}>Лучший офис в удобном месте</div>
           <div className={styles.buttons_wrapper}>
@@ -45,20 +45,22 @@ const Header = ({ children }) => {
                   justifyContent: "space-around",
                 }}
               >
-
                 {quizOpen ? (
                   <>
-                    <span onClick={handleButtonClick}>Помощь с выбором отделения</span>
+                    <span onClick={handleButtonClick}>
+                      Помощь с выбором отделения
+                    </span>
                     <HelpCircle size="24px" />
-                  <Quiz />
+                    <Quiz setQuizOpen={setQuizOpen} />
                   </>
                 ) : (
                   <>
-                    <span onClick={handleButtonClick}>Помощь с выбором отделения</span>
+                    <span onClick={handleButtonClick}>
+                      Помощь с выбором отделения
+                    </span>
                     <HelpCircle size="24px" />
                   </>
                 )}
-
               </div>
             </button>
           </div>
