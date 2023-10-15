@@ -1,7 +1,6 @@
 import axios from "axios";
 import "./App.css";
 import { SidePanel } from "./components/sidePanel/SidePanel.jsx";
-import { Quiz } from "./components/quiz/Quiz.jsx";
 import { useState, useRef, useEffect } from "react";
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 import { useQuery } from "react-query";
@@ -25,7 +24,16 @@ function App() {
     } else {
       console.error("Geolocation is not supported by your browser");
     }
+
+    getNearby();
   }, []);
+
+  const getNearby = async () => {
+    const data = await axios.get(
+      `http://91.222.236.93:8080/nearby?latitude=${userLocation[0]}&longitude=${userLocation[1]}&radius=10000`
+    );
+    return [data.data];
+  };
 
   const getOffices = async () => {
     const data = await axios.get("http://91.222.236.93:8080/offices");
@@ -34,12 +42,12 @@ function App() {
 
   const getAtms = async () => {
     const data = await axios.get("http://91.222.236.93:8080/atms");
-    console.log(data.data._embedded.atms);
     return data.data._embedded.atms;
   };
 
   const { data } = useQuery("offices", getOffices);
   const { data: dataAtms } = useQuery("atms", getAtms);
+  const { data: nearbyOffice } = useQuery("nearby", getNearby);
 
   const handleClick = (marker) => {
     onOpen();
@@ -99,6 +107,20 @@ function App() {
                   iconLayout: "default#image",
                   iconImageHref: "images/VTB_atms.svg",
                   iconImageSize: [70, 70],
+                  iconImageOffset: [-20, -40],
+                }}
+                key={marker.code}
+                geometry={[marker.latitude, marker.longitude]}
+                onClick={() => handleClick(marker)}
+              />
+            ))}
+          {nearbyOffice &&
+            nearbyOffice.map((marker) => (
+              <Placemark
+                options={{
+                  iconLayout: "default#image",
+                  iconImageHref: "images/VTB_atms.svg",
+                  iconImageSize: [150, 150],
                   iconImageOffset: [-20, -40],
                 }}
                 key={marker.code}
