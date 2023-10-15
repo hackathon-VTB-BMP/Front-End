@@ -12,9 +12,13 @@ const PointCard = ({ dataProps, addRoute, userLocation, onClose }) => {
     onClose();
   };
 
+  console.log(userLocation);
+
   return (
     <>
-      <div className={styles.name}>{dataProps.salePointName}</div>
+      <div className={styles.name}>
+        {dataProps.name ? dataProps.name : "Банкомат"}
+      </div>
       <div className={styles.address}>{dataProps.address}</div>
       <div className={styles.time_wrapper}>
         <div className={styles.logo}>
@@ -51,7 +55,7 @@ const PointCard = ({ dataProps, addRoute, userLocation, onClose }) => {
         className={styles.text_info_wrapper}
         onClick={() => setOpenInfo(!openInfo)}
       >
-        <div className={styles.text_info}>Загруженность офиса</div>
+        <div className={styles.text_info}>Подробнее</div>
         {openInfo ? (
           <ChevronUp size="18px" color="#0a2896" />
         ) : (
@@ -246,7 +250,159 @@ const PointCard = ({ dataProps, addRoute, userLocation, onClose }) => {
                 </div>
               </TabPanel>
               <TabPanel>
-                <p>two!</p>
+                <div className={styles.time_work}>
+                  Время работы: с 10:00 до 18:00
+                </div>
+
+                <div className={styles.chart}>
+                  <div className={styles.chart_hour_wrapper}>
+                    <div className={styles.chart_hour}>
+                      <div
+                        className={styles.chart_hour_fetch}
+                        style={{ height: "80%", backgroundColor: "#ff8282" }}
+                      ></div>
+                    </div>
+                    <div className={styles.divider}></div>
+                    <div className={styles.number}>10</div>
+                  </div>
+                  <div className={styles.chart_hour_wrapper}>
+                    <div className={styles.chart_hour}>
+                      <div
+                        className={styles.chart_hour_fetch}
+                        style={{ height: "70%", backgroundColor: "#fbd158" }}
+                      ></div>
+                    </div>
+                    <div className={styles.divider}></div>
+                    <div className={styles.number}>11</div>
+                  </div>
+                  <div className={styles.chart_hour_wrapper}>
+                    <div className={styles.chart_hour}>
+                      <div
+                        className={styles.chart_hour_fetch}
+                        style={{ height: "10%", backgroundColor: "#4cc864" }}
+                      ></div>
+                    </div>
+                    <div className={styles.divider}></div>
+                    <div className={styles.number}>12</div>
+                  </div>
+                  <div className={styles.chart_hour_wrapper}>
+                    <div className={styles.chart_hour}>
+                      <div
+                        className={styles.chart_hour_fetch}
+                        style={{ height: "100%", backgroundColor: "#ff8282" }}
+                      ></div>
+                    </div>
+                    <div className={styles.divider}></div>
+                    <div className={styles.number}>13</div>
+                  </div>
+                  <div className={styles.chart_hour_wrapper}>
+                    <div className={styles.chart_hour}>
+                      <div
+                        className={styles.chart_hour_fetch}
+                        style={{ height: "80%", backgroundColor: "#ff8282" }}
+                      ></div>
+                    </div>
+                    <div className={styles.divider}></div>
+                    <div className={styles.number}>14</div>
+                  </div>
+                  <div className={styles.chart_hour_wrapper}>
+                    <div className={styles.chart_hour}>
+                      <div
+                        className={styles.chart_hour_fetch}
+                        style={{ height: "40%", backgroundColor: "#4cc864" }}
+                      ></div>
+                    </div>
+                    <div className={styles.divider}></div>
+                    <div className={styles.number}>15</div>
+                  </div>
+                  <div className={styles.chart_hour_wrapper}>
+                    <div className={styles.chart_hour}>
+                      <div
+                        className={styles.chart_hour_fetch}
+                        style={{ height: "20%", backgroundColor: "#4cc864" }}
+                      ></div>
+                    </div>
+                    <div className={styles.divider}></div>
+                    <div className={styles.number}>16</div>
+                  </div>
+                  <div className={styles.chart_hour_wrapper}>
+                    <div className={styles.chart_hour}>
+                      <div
+                        className={styles.chart_hour_fetch}
+                        style={{ height: "60%", backgroundColor: "#fbd158" }}
+                      ></div>
+                    </div>
+                    <div className={styles.divider}></div>
+                    <div className={styles.number}>17</div>
+                  </div>
+                </div>
+
+                <div className={styles.time_wait_wrapper}>
+                  <div className={styles.time_wait}>Время ожидания</div>
+                  <div
+                    className={styles.time_info_wrapper}
+                    style={{ display: "flex" }}
+                  >
+                    <div className={styles.wait5}>
+                      <svg
+                        width="8"
+                        height="8"
+                        viewBox="0 0 8 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 2C0 0.895431 0.895431 0 2 0H6C7.10457 0 8 0.895431 8 2V6C8 7.10457 7.10457 8 6 8H2C0.895431 8 0 7.10457 0 6V2Z"
+                          fill="#8EC26A"
+                        />
+                      </svg>
+                      <div className={styles.time_text}>{"< 5 мин"}</div>
+                    </div>
+                    <div className={styles.wait15}>
+                      <svg
+                        width="8"
+                        height="8"
+                        viewBox="0 0 8 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 2C0 0.895431 0.895431 0 2 0H6C7.10457 0 8 0.895431 8 2V6C8 7.10457 7.10457 8 6 8H2C0.895431 8 0 7.10457 0 6V2Z"
+                          fill="#FBD158"
+                        />
+                      </svg>
+
+                      <div className={styles.time_text}>15-30 мин</div>
+                    </div>
+                    <div className={styles.wait30}>
+                      <svg
+                        width="8"
+                        height="8"
+                        viewBox="0 0 8 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 2C0 0.895431 0.895431 0 2 0H6C7.10457 0 8 0.895431 8 2V6C8 7.10457 7.10457 8 6 8H2C0.895431 8 0 7.10457 0 6V2Z"
+                          fill="#FF8282"
+                        />
+                      </svg>
+
+                      <div className={styles.time_text}>{"> 30 мин"}</div>
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.title_info}>Возможности</div>
+                {tags.map((el, index) => (
+                  <div key={index} className={styles.tags}>
+                    {el}
+                  </div>
+                ))}
+                <div className={styles.title_info}>Контакты</div>
+                <div className={styles.contacts_wrapper}>
+                  <Phone size="14px" color="#0a2896" />
+                  <div className="contacts_text">8 800 200 80 80</div>
+                </div>
               </TabPanel>
             </TabPanels>
           </Tabs>
