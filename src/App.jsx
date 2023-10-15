@@ -56,7 +56,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <YMaps
         query={{
           lang: "en_RU",
