@@ -1,0 +1,14 @@
+.title {
+  padding: 30px 0 0 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+.subtitle {
+  margin: 24px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0a2896;
+}
+.adress {
+  font-size: 10px;
+}

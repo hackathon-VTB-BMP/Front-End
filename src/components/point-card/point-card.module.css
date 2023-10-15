@@ -1,0 +1,152 @@
+.name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.address {
+  font-size: 12px;
+  font-weight: 400;
+  color: #acb6c3;
+  margin-bottom: 8px;
+}
+.time_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.time {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4cc864;
+}
+.gift_wrapper {
+  padding: 4px;
+  background-color: rgba(25, 200, 42, 0.03);
+  background-repeat: 8px;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 8px;
+}
+.gift_info {
+  color: #4cc864;
+  font-size: 14px;
+  font-weight: 400;
+  width: 200px;
+}
+.button_wrapper {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  border-radius: 6px;
+  outline: 1px solid #0a2896;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.button_wrapper svg {
+  margin-top: 2px;
+}
+.button_text {
+  padding: 5px 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #0a2896;
+}
+.text_info_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.text_info {
+  font-size: 14px;
+  font-weight: 400;
+  color: #0a2896;
+}
+.tabs {
+  margin-top: 10px;
+}
+.time_work {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.time_wait {
+  font-size: 12px;
+  font-weight: 400;
+}
+.time_info_wrapper {
+  display: flex;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+.wait5 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+.wait15 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+.wait30 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+.chart_hour_wrapper {
+  width: 20px;
+}
+.chart_hour {
+  display: flex;
+  align-items: end;
+  width: 20px;
+  height: 40px;
+  background-color: #eaecf4;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: #eaecf4;
+}
+.chart_hour_fetch {
+  border-radius: 5px;
+  width: 100%;
+}
+.chart {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+.title_info {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.tags {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding: 8px 12px;
+  color: #0a2896;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #f1f5ff;
+}
+.contacts_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
