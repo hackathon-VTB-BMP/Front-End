@@ -9,6 +9,12 @@ import { useDisclosure } from "@chakra-ui/react";
 import DrawerComponent from "./components/drawer-components/DrawerComponent";
 
 function App() {
+<<<<<<< HEAD
+=======
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [dataProps, setDataProps] = useState();
+
+>>>>>>> Sergey_02
   const [ymaps, setYmaps] = useState(null);
   const map = useRef(null);
   const [userLocation, setUserLocation] = useState(null);
@@ -39,6 +45,14 @@ function App() {
 
   const { data } = useQuery("offices", getOffices);
 
+<<<<<<< HEAD
+=======
+  const handleClick = (marker) => {
+    onOpen();
+    setDataProps(marker);
+  };
+
+>>>>>>> Sergey_02
   const addRoute = (myPoint, pointB) => {
     const multiRoute = new ymaps.multiRouter.MultiRoute(
       {
@@ -115,9 +129,15 @@ function App() {
           />
         </Map>
       </YMaps>
+<<<<<<< HEAD
       <SidePanel />
       {/* <Quiz /> */}
     </>
+=======
+      <SidePanel/>
+      {/*<Quiz/>*/}
+  </>
+>>>>>>> Sergey_02
   );
 }
 
